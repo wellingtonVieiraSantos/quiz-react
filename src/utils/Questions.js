@@ -12,7 +12,7 @@ const Questions = [
   {
     'question': 'Em "Gritei tanto que fiquei sem voz", expressa:',
     'options': ['concessão', 'causa', 'consequência', 'conformidade'],
-    'correct': 'concessão',
+    'correct': 'consequência',
   },
   {
     'question': 'Em "isso é tão prazeroso que me vicia", indica:',
@@ -90,7 +90,7 @@ const Questions = [
     'correct': 'Conclusivas',
   },
   {
-    'question': 'Qual a classificação das conjunções a seguir: assim, logo, portanto, então, por isso, desse modo, por conseguinte, dessa forma, pois (deslocado)',
+    'question': 'Qual a classificação das conjunções a seguir: que, porque, pois (antes do verbo), porquanto',
     'options': ['Aditivas', 'Explicativas', 'Alternativas', 'Adversativas'],
     'correct': 'Explicativas',
   },
