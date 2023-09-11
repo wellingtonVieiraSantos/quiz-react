@@ -1,6 +1,6 @@
 const Questions = [
   {
-    'question': 'Marque a alternativa que contém apenas conjunções adverviais concessivas.',
+    'question': 'Marque a alternativa que contém apenas conjunções adverbiais concessivas.',
     'options': ['porque, como, visto que','tal...que, tão...que, tanto ...que', 'ainda que, se bem que, embora ', 'caso, se , salvo se'],
     'correct': 'ainda que, se bem que, embora ',
   },

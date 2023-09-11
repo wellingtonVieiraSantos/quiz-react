@@ -25,7 +25,7 @@ function App() {
     <main className='w-screen h-screen bg-gradient-to-t from-slate-950 via-pink-900 to-pink-500 flex justify-center cursor-default'>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<InitialScreen/>}/>
+          <Route path='/' exact element={<InitialScreen/>}/>
           <Route path='/game' element={idQuestion < Questions.length
             ? <GameScreen question={question} idQuestion={idQuestion} setIdQuestion={setIdQuestion}/>
             : <GameVictory setIdQuestion={setIdQuestion}/>}/>
