@@ -30,7 +30,7 @@ function App() {
             ? <GameScreen question={question} idQuestion={idQuestion} setIdQuestion={setIdQuestion}/>
             : <GameVictory setIdQuestion={setIdQuestion}/>}/>
           <Route path='/gameover' element={<GameOverScreen setIdQuestion={setIdQuestion}/>}/>
-          <Route path='*' element={<Page404 setIdQuestion={setIdQuestion}/>}/>
+          <Route element={<Page404 setIdQuestion={setIdQuestion}/>}/>
         </Routes>
       </BrowserRouter>
     </main>
