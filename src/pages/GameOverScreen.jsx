@@ -6,7 +6,8 @@ const GameOverScreen = ({setIdQuestion}) => {
   const navigate = useNavigate()
 
   const handleTouch = () =>{
-    setIdQuestion(0)
+    //obs: gambiarra para nao repetir a primeira pergunta ao perder, ja q a pergunta so muda ao trocar de idQuestion.
+    setIdQuestion(-1)
     setTimeout(()=>{
       navigate('/')
     },500)

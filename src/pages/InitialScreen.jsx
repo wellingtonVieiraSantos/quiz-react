@@ -1,10 +1,13 @@
+/* eslint-disable react/prop-types */
 import { useNavigate } from "react-router-dom";
 
-const InitialScreen = () => {
+const InitialScreen = ({setInGame, setIdQuestion}) => {
 
   const navigate = useNavigate()
 
 const handleTouch = () =>{
+  setInGame(prevState => !prevState)
+  setIdQuestion(0)
   setTimeout(()=>{
     navigate('/game')
   },500)

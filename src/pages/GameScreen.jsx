@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 
-const GameScreen = ({question, idQuestion, setIdQuestion}) => {
+const GameScreen = ({question, idQuestion, setIdQuestion, setInGame}) => {
 
   const [btnSelected, setBtnSelected] = useState(null)
   const [btnDisabled, setBtnDisabled] = useState(false)
@@ -22,12 +22,13 @@ const GameScreen = ({question, idQuestion, setIdQuestion}) => {
 
     setTimeout(() => {
       if(question.correct === option){
-          setIdQuestion(prevState => prevState + 1)
-          setBtnSelected(null)
-          setBtnDisabled(false)
+        setIdQuestion(prevState => prevState + 1)
+        setBtnSelected(null)
+        setBtnDisabled(false)
       }else{
-          navigate('/gameover')
-        }
+        setInGame(prevState => !prevState)
+        navigate('/gameover')
+      }
     },1000)
   }
 

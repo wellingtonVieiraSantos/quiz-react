@@ -1,12 +1,12 @@
 /* eslint-disable react/prop-types */
 import { useNavigate } from "react-router-dom"
 
-const GameVictory = ({setIdQuestion}) => {
+const GameVictory = ( {setInGame}) => {
 
   const navigate = useNavigate()
 
   const handleTouch = () =>{
-    setIdQuestion(0)
+    setInGame(prevState => !prevState)
     setTimeout(() => {
       navigate('/')
     }, 500);

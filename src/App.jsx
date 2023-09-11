@@ -12,22 +12,31 @@ import { useEffect, useState } from 'react'
 
 function App() {
   const [question, setQuestion] = useState('')
+  const [questions, setQuestions] = useState('')
   const [idQuestion, setIdQuestion] = useState(0)
+  const [inGame, setInGame] = useState(false)
 
   useEffect(()=>{
-    setQuestion(Questions[idQuestion])
-  },[idQuestion])
+    if(inGame){
+      const shuffleQuestions = Questions.sort(()=> Math.random() - 0.5)
+      setQuestions(shuffleQuestions)
+    }
+  },[inGame])
+
+  useEffect(()=>{
+    setQuestion(questions[idQuestion])
+  },[idQuestion, questions])
 
   return (
     <main className='w-screen h-screen bg-gradient-to-t from-slate-950 via-pink-900 to-pink-500 flex justify-center cursor-default'>
       <BrowserRouter>
         <Routes>
-          <Route path='/' exact element={<InitialScreen/>}/>
+          <Route path='/' exact element={<InitialScreen setInGame={setInGame} setIdQuestion={setIdQuestion}/>}/>
           <Route path='/game' element={idQuestion < Questions.length
-            ? <GameScreen question={question} idQuestion={idQuestion} setIdQuestion={setIdQuestion}/>
-            : <GameVictory setIdQuestion={setIdQuestion}/>}/>
+            ? <GameScreen question={question} idQuestion={idQuestion} setIdQuestion={setIdQuestion} setInGame={setInGame}/>
+            : <GameVictory setInGame={setInGame}/>}/>
           <Route path='/gameover' element={<GameOverScreen setIdQuestion={setIdQuestion}/>}/>
-          <Route element={<Page404 setIdQuestion={setIdQuestion}/>}/>
+          <Route element={<Page404/>}/>
         </Routes>
       </BrowserRouter>
     </main>
