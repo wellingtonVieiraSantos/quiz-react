@@ -18,9 +18,6 @@ function App() {
     setQuestion(Questions[idQuestion])
   },[idQuestion])
 
-  /* obs: fazer uma nova rota para dificuldade: facil com (vida extra), normal  e posteriormente dificil com tempo para responder*/
-  /* se o jogador digitar a rota  jogo pelo endereço sem escolher a dificuldade ele sera redirecionado para a rota dificuldade */
-  /* criar animação de transição de rotas com framer-motion */
   return (
     <main className='w-screen h-screen bg-gradient-to-t from-slate-950 via-pink-900 to-pink-500 flex justify-center cursor-default'>
       <BrowserRouter>
