@@ -18,7 +18,7 @@ const handleTouch = () =>{
       onClick={handleTouch}>
       <h1 className='font-RockSalt text-7xl font-bold '>Quiz</h1>
       <span className='font-dotGhotic16 animate-pulse'>Toque para começar.</span>
-      <span className="text-xs font-dotGhotic16 font">Created by Ton</span>
+      <span className="text-xs font-dotGhotic16 text-slate-400">Created by Ton</span>
     </div>
   )
 }
