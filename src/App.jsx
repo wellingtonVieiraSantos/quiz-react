@@ -1,3 +1,5 @@
+import { inject } from '@vercel/analytics'
+
 import Questions from './utils/Questions'
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
@@ -26,6 +28,8 @@ function App() {
   useEffect(()=>{
     setQuestion(questions[idQuestion])
   },[idQuestion, questions])
+
+  inject()
 
   return (
     <main className='w-screen h-screen bg-gradient-to-t from-slate-950 via-pink-900 to-pink-500 flex justify-center cursor-default'>
