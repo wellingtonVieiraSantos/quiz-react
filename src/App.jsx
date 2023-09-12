@@ -1,4 +1,4 @@
-import { inject } from '@vercel/analytics'
+import { Analytics } from '@vercel/analytics/react'
 
 import Questions from './utils/Questions'
 
@@ -29,8 +29,6 @@ function App() {
     setQuestion(questions[idQuestion])
   },[idQuestion, questions])
 
-  inject()
-
   return (
     <main className='w-screen h-screen bg-gradient-to-t from-slate-950 via-pink-900 to-pink-500 flex justify-center cursor-default'>
       <BrowserRouter>
@@ -43,6 +41,7 @@ function App() {
           <Route element={<Page404/>}/>
         </Routes>
       </BrowserRouter>
+      <Analytics/>
     </main>
   )
 }
