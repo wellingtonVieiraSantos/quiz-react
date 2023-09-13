@@ -21,6 +21,9 @@ function App() {
   useEffect(()=>{
     if(inGame){
       const shuffleQuestions = Questions.sort(()=> Math.random() - 0.5)
+      shuffleQuestions.forEach(shuffledQuestion => {
+        shuffledQuestion.options = shuffledQuestion.options.sort(()=> Math.random() - 0.5)
+      })
       setQuestions(shuffleQuestions)
     }
   },[inGame])
